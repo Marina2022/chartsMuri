@@ -1,0 +1,19 @@
+
+.main  {
+  padding-bottom: 70px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  
+  li {
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 10px;
+  }
+}
