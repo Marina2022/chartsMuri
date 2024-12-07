@@ -1,16 +1,8 @@
-.svg {
-  //background: white;
-  overflow: visible;
-}
-
-.rect {
-  fill: lightgreen;
-}
 
 .btn {
   display: block;
   margin-top: 30px;
-  background: lightgreen;
+  background: lightcoral;
   font-weight: bold;
   padding: 10px 20px;
   border: none;
@@ -18,9 +10,19 @@
   box-shadow: 2px 2px 5px 2px rgb(0 0 0 /.2);
   cursor: pointer;
   transition: background-color .1s ease-out ;
-  
+
   &:active {
-    background: darken(lightgreen, 5);
+    background: darken(lightcoral, 2);
     transition: background-color .1s ease-out ;
   }
+}
+
+.svg {
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke: lightcoral;
+  stroke-width: 2px;
 }

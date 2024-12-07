@@ -5,6 +5,7 @@ import First from "@/components/1-First/First.jsx";
 import Pedro from "@/components/2-Pedro/Pedro.jsx";
 import {createGlobalStyle} from "styled-components";
 import MuriBasics from "@/components/3-Muri-basics/MuriBasics.jsx";
+import LineChart from "@/components/4-Linechart/Linechart.jsx";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/first' element={<First/>}/>
           <Route path='/pedro' element={<Pedro/>}/>
           <Route path='/muri-basics' element={<MuriBasics/>}/>
+          <Route path='/line-chart' element={<LineChart/>}/>
 
         </Routes>
       </Router>

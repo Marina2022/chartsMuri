@@ -12,14 +12,16 @@ const Home = () => {
               <li>
                 <Link to="/first">First</Link>
               </li>
-
               <li>
                 <Link to="/pedro">Pedro</Link>
               </li>
-
               <li>
                 <Link to="/muri-basics">MuriBasics</Link>
               </li>
+              <li>
+                <Link to="/line-chart">Line Chart</Link>
+              </li>
+            
             </ul>
           </nav>
         </div>

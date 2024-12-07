@@ -1,10 +1,10 @@
-import s from './MuriBasics.module.scss'
+import s from './Linechart.module.scss'
 import HomeLink from "@/components/common/HomeLink.jsx";
 import * as d3 from 'd3'
 import {useEffect, useRef, useState} from "react";
 import {motion} from 'framer-motion'
 
-const MuriBasics = () => {
+const LineChart = () => {
 
   const [data, setData] = useState([
     {name: 'Mara', age: 25},
@@ -20,11 +20,12 @@ const MuriBasics = () => {
   }
   const xAccessor = d => d.name
 
-  const xScale = d3.scaleBand()
+  const xScale = d3.scalePoint()
     .domain(data.map(xAccessor))
     .range([0, dimensions.width])
     .padding(.2)
 
+  console.log(data)
   const yAccessor = d => d.age
 
   const yScale = d3.scaleLinear()
@@ -51,6 +52,11 @@ const MuriBasics = () => {
     setData(newArr)
   }
 
+  const lineGenerator = d3.line()
+    .x(d => xScale(d.name))
+    .y(d => yScale(d.age))
+
+
   return (
     <div className='container'>
       <HomeLink/>
@@ -58,42 +64,38 @@ const MuriBasics = () => {
       <svg ref={svgRef} className={s.svg} width="700" height="500">
         <g>
           {
-            data.map((d) => {
-              const barHeight = dimensions.height - yScale(yAccessor(d));
-              const barY = yScale(yAccessor(d));
-
-              return <motion.rect
-                initial={false}  // первый раз не анимировать
-                key={d.name}
-                x={xScale(xAccessor(d))}
-                width={xScale.bandwidth()}
-                className={s.rect}
-
-                animate={{
-                  height: barHeight, // Анимация высоты
-                  y: barY, // Поддержка правильной позиции                                   
-                }}
-
-                transition={{
-                  duration: 0.5, // Длительность анимации
-                  ease: "easeOut", // Избегаем bounce, плавно заканчиваем
-                }}
-              />
+            <path
+              className={s.line}
+              d={lineGenerator(data)}
+            />
+          }
+        </g>
+        
+        <g className="points">
+          {
+            data.map((d, i)=>{
+              return <circle
+                key={i}
+                className={s.circle}
+                r={5}
+                fill={'red'}
+                cx={xScale(d.name)}
+                cy={yScale(d.age)}              
+              /> 
             })
           }
         </g>
 
-
-        <g className='xAxis' transform={`translate(22, ${dimensions.height})`} ></g>
-        <g className='yAxis' transform='translate(22,0)'></g>
+        <g className='xAxis' transform={`translate(0, ${dimensions.height})`}></g>
+        <g className='yAxis'></g>
 
       </svg>
 
-      
+
       <button className={s.btn} onClick={clickHandler}>Click</button>
     </div>
   );
 };
 
-export default MuriBasics;
+export default LineChart;
 
