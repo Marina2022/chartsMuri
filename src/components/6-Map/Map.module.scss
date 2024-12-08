@@ -1,0 +1,48 @@
+
+.btn {
+  display: block;
+  margin-top: 30px;
+  background: lightcoral;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgb(0 0 0 /.2);
+  cursor: pointer;
+  transition: background-color .1s ease-out ;
+
+  &:active {
+    background: darken(lightcoral, 2);
+    transition: background-color .1s ease-out ;
+  }
+}
+
+.svg {
+  overflow: visible;
+  width: 100%;
+  height: auto; /* Высота автоматически подстраивается под ширину */
+  //aspect-ratio: 2 / 1.5; /* Если хотите сохранить пропорции */  
+  border: coral 2px dotted;
+}
+
+.name {
+  padding: 10px;
+  height: 40px;
+  background-color: coral;
+  font-family: sans-serif;
+  font-width: bold;
+  color: white;
+}
+
+
+
+.title {
+  margin-top: -300px;
+  text-align: center;
+}
+
+
+.path {
+  fill: lightyellow;
+  stroke: coral;
+}

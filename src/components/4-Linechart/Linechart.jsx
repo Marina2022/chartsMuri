@@ -36,10 +36,14 @@ const LineChart = () => {
 
   useEffect(() => {
     const xAxis = d3.axisBottom(xScale)
+      .tickSizeOuter(0)
+
     d3.select('.xAxis')
       .call(xAxis)
 
     const yAxis = d3.axisLeft(yScale)
+      .tickSizeOuter(0)
+    
     d3.select('.yAxis')
       .call(yAxis)
   }, [xScale, yScale]);
@@ -55,33 +59,44 @@ const LineChart = () => {
   const lineGenerator = d3.line()
     .x(d => xScale(d.name))
     .y(d => yScale(d.age))
+    // .curve(d3.curveBumpX)
+    .curve(d3.curveCardinal)
 
 
   return (
     <div className='container'>
       <HomeLink/>
 
-      <svg ref={svgRef} className={s.svg} width="700" height="500">
+      <svg ref={svgRef} className={s.svg} preserveAspectRatio="xMidYMid meet" viewBox="0 0 700 500" >
         <g>
           {
-            <path
+            <motion.path
+              initial={false}
               className={s.line}
-              d={lineGenerator(data)}
+
+              animate={{
+                d: lineGenerator(data)
+              }}
             />
           }
         </g>
-        
+
         <g className="points">
           {
-            data.map((d, i)=>{
-              return <circle
+            data.map((d, i) => {
+              return <motion.circle
+                initial={false}
                 key={i}
                 className={s.circle}
                 r={5}
                 fill={'red'}
-                cx={xScale(d.name)}
-                cy={yScale(d.age)}              
-              /> 
+
+                animate={{
+                  cx: xScale(d.name),
+                  cy: yScale(d.age)
+                }}
+
+              />
             })
           }
         </g>

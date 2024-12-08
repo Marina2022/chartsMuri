@@ -1,10 +1,9 @@
 .svg {
-  //background: white;
   overflow: visible;
 }
 
 .rect {
-  fill: lightgreen;
+  transition: fill ease-in-out .3s;
 }
 
 .btn {
@@ -17,10 +16,23 @@
   border-radius: 10px;
   box-shadow: 2px 2px 5px 2px rgb(0 0 0 /.2);
   cursor: pointer;
-  transition: background-color .1s ease-out ;
-  
+  transition: background-color .1s ease-out;
+
   &:active {
     background: darken(lightgreen, 5);
-    transition: background-color .1s ease-out ;
+    transition: background-color .1s ease-out;
   }
+}
+
+
+.text {
+  text-anchor: middle;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: sans-serif;
+  //opacity: 0;
+}
+
+.ghost {
+  margin-block: 30px;
 }

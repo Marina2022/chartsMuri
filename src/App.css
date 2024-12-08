@@ -3,3 +3,9 @@
   margin: 100px auto;
   padding-inline: 16px;
 }
+
+.container1 {
+  max-width: 1440px;
+  margin: 100px auto;
+  padding-inline: 16px;
+}

@@ -1,6 +1,6 @@
 import appleStock from '@visx/mock-data/lib/mocks/appleStock.js'
 import useMeasure from 'react-use-measure'
-import {scaleBand, scaleLinear, scaleTime} from '@visx/scale'
+import {scaleBand, scaleLinear} from '@visx/scale'
 import {Group} from '@visx/group'
 import {AxisLeft, AxisBottom} from '@visx/axis'
 import {Bar} from '@visx/shape'
@@ -8,8 +8,8 @@ import styled from 'styled-components'
 import HomeLink from "@/components/common/HomeLink.jsx";
 
 const Wrapper = styled.div`
-    width: 900px;
-    height: 500px;
+    //width: 900px;
+    //height: 500px;
 `
 const Pedro = () => {
 
@@ -52,7 +52,7 @@ const Pedro = () => {
       <HomeLink/>
       <h2>visX</h2>
       <Wrapper>
-        <svg ref={ref} width="100%" height="100%" viewBox={`0 0 ${width} ${height}`}>
+        <svg ref={ref} width="100%" height="100%" viewBox={`0 0 ${width} ${height}`}  >
 
           <Group>{
             data.map(d => {

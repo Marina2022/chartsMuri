@@ -21,6 +21,12 @@ const Home = () => {
               <li>
                 <Link to="/line-chart">Line Chart</Link>
               </li>
+              <li>
+                <Link to="/gauge">Gauge</Link>
+              </li>
+              <li>
+                <Link to="/map">Map</Link>
+              </li>
             
             </ul>
           </nav>

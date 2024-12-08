@@ -6,6 +6,8 @@ import Pedro from "@/components/2-Pedro/Pedro.jsx";
 import {createGlobalStyle} from "styled-components";
 import MuriBasics from "@/components/3-Muri-basics/MuriBasics.jsx";
 import LineChart from "@/components/4-Linechart/Linechart.jsx";
+import Gauge from "@/components/5-Gauge/Gauge.jsx";
+import Map from "@/components/6-Map/Map.jsx";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -33,6 +35,8 @@ function App() {
           <Route path='/pedro' element={<Pedro/>}/>
           <Route path='/muri-basics' element={<MuriBasics/>}/>
           <Route path='/line-chart' element={<LineChart/>}/>
+          <Route path='/gauge' element={<Gauge/>}/>
+          <Route path='/map' element={<Map/>}/>
 
         </Routes>
       </Router>
