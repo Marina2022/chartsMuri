@@ -38,6 +38,8 @@ const Map = () => {
         {
           data.features.map((country, i) => {
             return <motion.path
+
+              initial={false}
               
               animate = {{
                 d: pathGenerator(country)  
