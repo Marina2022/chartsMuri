@@ -27,6 +27,9 @@ const Home = () => {
               <li>
                 <Link to="/map">Map</Link>
               </li>
+              <li>
+                <Link to="/stacked-bars">Stacked Bars</Link>
+              </li>
             
             </ul>
           </nav>

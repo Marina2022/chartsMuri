@@ -18,7 +18,7 @@
 }
 
 .svg {
-  overflow: visible;
+  //overflow: visible;
   width: 100%;
   height: auto; /* Высота автоматически подстраивается под ширину */
   //aspect-ratio: 2 / 1.5; /* Если хотите сохранить пропорции */  
@@ -45,4 +45,5 @@
 .path {
   fill: lightyellow;
   stroke: coral;
+  
 }

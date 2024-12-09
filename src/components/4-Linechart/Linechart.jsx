@@ -63,13 +63,18 @@ const LineChart = () => {
     .curve(d3.curveCardinal)
 
 
+  const areaGenerator = d3.area()
+    .x(d => xScale(d.name))
+    .y0(d => 500 )
+    .y1(d => yScale(d.age))
+    .curve(d3.curveCardinal)
+  
   return (
     <div className='container'>
       <HomeLink/>
 
       <svg ref={svgRef} className={s.svg} preserveAspectRatio="xMidYMid meet" viewBox="0 0 700 500" >
-        <g>
-          {
+        <g>          
             <motion.path
               initial={false}
               className={s.line}
@@ -77,6 +82,15 @@ const LineChart = () => {
               animate={{
                 d: lineGenerator(data)
               }}
+            />          
+        </g>
+
+        <g>
+          {
+            <path
+            className={s.pathArea}  
+            d={areaGenerator(data)}
+            
             />
           }
         </g>

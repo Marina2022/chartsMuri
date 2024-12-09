@@ -19,13 +19,14 @@
 
 .svg {
   overflow: visible;
+  width: 100%;
 }
 
 .line {
   fill: none;
   stroke: lightcoral;
   stroke-width: 2px;
-  
+
   //display: none;
 }
 
@@ -33,4 +34,12 @@
   fill: skyblue;
   stroke: green;
   stroke-width: 2px;
+}
+
+.wrapper {
+  margin-top: 100px;
+  width: 800px;
+  max-width: 90%;
+  margin-inline: auto;
+  
 }

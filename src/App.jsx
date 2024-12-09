@@ -8,6 +8,7 @@ import MuriBasics from "@/components/3-Muri-basics/MuriBasics.jsx";
 import LineChart from "@/components/4-Linechart/Linechart.jsx";
 import Gauge from "@/components/5-Gauge/Gauge.jsx";
 import Map from "@/components/6-Map/Map.jsx";
+import StackedBars from "@/components/7-StackedBars/StackedBars.jsx";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/line-chart' element={<LineChart/>}/>
           <Route path='/gauge' element={<Gauge/>}/>
           <Route path='/map' element={<Map/>}/>
+          <Route path='/stacked-bars' element={<StackedBars/>}/>
 
         </Routes>
       </Router>
